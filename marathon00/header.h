@@ -3,8 +3,12 @@
 
 #include <unistd.h>
 
-int	error(int argc, char argv[][]);
+char table[9][9][10]
+
+void	tableFilling(char **argv);
+int	error(int argc, char **argv);
+int	putError();
 int	isDone(char argv[][]);
-int	solve(char argv[][]);
+void	solve(char argv[][]);
 
 # endif
