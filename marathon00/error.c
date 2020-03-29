@@ -10,4 +10,5 @@ int	error(int argc, char argv[][], int done)
 	{
 
 	}
+	return (0);
 }

@@ -5,10 +5,11 @@
 
 char table[9][9][10]
 
-void	tableFilling(char **argv);
+void	tableFilling(char **argv); 	// DONE
 int	error(int argc, char **argv);
-int	putError();
+int	putError();			// DONE
 int	isDone(char argv[][]);
 void	solve(char argv[][]);
+void	showTable();			// DONE
 
 # endif
