@@ -16,11 +16,14 @@ void	tableFilling(char **argv)
 			else
 				while (k < 10)
 				{
+					table[i][j][0] = '.';
 					table[i][j][k] = k;
 					(k++);
 				}
+			k = 1;
 			(j++);
 		}
+		j = 0;
 		(i++);
 	}
-			
+}
