@@ -1,3 +1,4 @@
-void	solve(char argv[][])
+void	solve(void)
 {
 		
+}

@@ -1,4 +1,4 @@
-void	showTable()
+void	showTable(void)
 {
 	int i;
 	int j;

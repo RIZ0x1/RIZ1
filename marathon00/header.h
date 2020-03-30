@@ -7,9 +7,9 @@ char table[9][9][10]
 
 void	tableFilling(char **argv); 	// DONE
 int	error(int argc, char **argv);
-int	putError();			// DONE
-int	isDone(char argv[][]);
-void	solve(char argv[][]);
-void	showTable();			// DONE
+int	putError(void);			// DONE
+int	isDone(void);
+void	solve(void);
+void	showTable(void);		// DONE
 
 # endif
