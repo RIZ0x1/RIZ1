@@ -19,12 +19,8 @@ int	error(int argc, char argv[][], int done)
 		(i++);
 	}
 	if (isDone(argv))
-	{
 		
-	}
 	else
-	{
 
-	}
 	return (0);
 }
