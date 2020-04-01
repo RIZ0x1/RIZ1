@@ -1,3 +1,5 @@
+#include "header.h"
+
 int	error(int argc, char argv[][], int done)
 {
 	int i;
@@ -11,7 +13,7 @@ int	error(int argc, char argv[][], int done)
 	{
 		while (j < 9)
 		{
-			if ((argv[i][j] > '9' || argv[i][j] < '0') && (argv[i][j] != '.'))
+			if (argv[i][j] > '9' || argv[i][j] < '0' || argv[i][j] != '.')
 				return (putError());
 			(j++);
 		}
@@ -19,8 +21,8 @@ int	error(int argc, char argv[][], int done)
 		(i++);
 	}
 	if (isDone(argv))
-		
+		doneError();
 	else
-
+		notDoneError();
 	return (0);
 }

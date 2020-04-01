@@ -1,3 +1,5 @@
+#include "header.h"
+
 void	solve(void)
 {
 	int y;
@@ -6,7 +8,6 @@ void	solve(void)
 	y = 0;
 	x = 0;
 	while (isDone())
-	{
 		while (y < 9)
 		{
 			while (x < 9)
@@ -19,5 +20,4 @@ void	solve(void)
 			x = 0;
 			(y++);
 		}
-	}
 }
