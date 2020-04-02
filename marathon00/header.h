@@ -13,6 +13,7 @@ void	solve(void);
 void	checkX(int y, int x);
 void	checkY(int y, int x);
 void	checkCage(int y, int x);
+int	counter(int y, int x);
 void	showTable(void);		// DONE
 
 # endif
