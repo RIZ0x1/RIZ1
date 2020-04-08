@@ -3,7 +3,6 @@
 int	main()
 {
 	int			sock;
-	int			newsock;
 	struct sockaddr_in	addr;
 
 	sock = socket(AF_INET, SOCK_STREAM, 0);

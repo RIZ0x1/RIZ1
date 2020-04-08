@@ -11,7 +11,7 @@ int	main()
 
 	addr.sin_family		= AF_INET;
 	addr.sin_port		= htons(PORT);
-	addr.sin_addr.s_addr	= htons(LOCAL_HOST);
+	addr.sin_addr.s_addr	= htonl(INADDR_LOOPBACK);
 
 	if (bind(sock, (struct sockaddr*)&addr, sizeof(addr)) < 0)
 		exit_failure("Binding error");
