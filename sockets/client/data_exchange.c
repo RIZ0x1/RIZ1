@@ -8,13 +8,20 @@ void	data_exchange(int sock)
 	recv(sock, buff_get, sizeof(buff_get), 0);
 	printf("%s", buff_get);
 
-	while (strcmp(buff_send, "/exit"))
+	while (1)
 	{
 		printf("\n>: ");
 		scanf("%s", buff_send);
-		send(sock, buff_send, sizeof(buff_send), 0);
-		recv(sock, buff_get, sizeof(buff_get), 0);
-		printf("%s", buff_get);
+		if (!strcmp(buff_send, "/exit"))
+		{
+				break ;
+		}
+		else
+		{
+			send(sock, buff_send, sizeof(buff_send), 0);
+			recv(sock, buff_get, sizeof(buff_get), 0);
+			printf("%s", buff_get);
+		}
 	}
-	printf("The connection has been cropped \n");
+	printf("Connection aborted \n");
 }

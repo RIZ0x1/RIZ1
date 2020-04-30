@@ -7,24 +7,30 @@ void	data_exchange(int sock)
 	char	name[21];
 	int	sock_cp;
 
-	sock_cp = accept(sock, 0, 0);
-
-	strcpy(buffer_send, "Input your name: ");
-	send(sock_cp, buffer_send, sizeof(buffer_send), 0);
-
-	do
+	while (1)
 	{
-		recv(sock_cp, buffer_get, SIZE, 0);
-		if (strlen(buffer_get) > 20)
-		{
-			strcpy(buffer_send, "ERROR: Too large name. Try again\n");
-			send(sock_cp, buffer_send, sizeof(buffer_send), 0);
-			continue ;
-		}
-		strcpy(name, buffer_get);
-		strcpy(buffer_send, "Hello, ");
-		strcat(buffer_send, name);
+		sock_cp = accept(sock, 0, 0);
+
+		strcpy(buffer_send, "Input your name: ");
 		send(sock_cp, buffer_send, sizeof(buffer_send), 0);
-	} while (strlen(buffer_get) < 20);
-	printf("The connection has been cropped \n");
+
+		while (1)
+		{
+			recv(sock_cp, buffer_get, SIZE, 0);
+			if (strlen(buffer_get) > 20)
+			{
+				strcpy(buffer_send, "ERROR: Too large string. Try again\n");
+				send(sock_cp, buffer_send, sizeof(buffer_send), 0);
+				strcpy(buffer_get, "");
+			}
+			else
+			{
+				strcpy(name, buffer_get);
+				strcpy(buffer_send, "Hello, ");
+				strcat(buffer_send, name);
+				send(sock_cp, buffer_send, sizeof(buffer_send), 0);
+			}
+		}
+		printf("Connection aborted \n");
+	}
 }
