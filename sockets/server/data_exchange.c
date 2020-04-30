@@ -25,5 +25,6 @@ void	data_exchange(int sock)
 		strcpy(buffer_send, "Hello, ");
 		strcat(buffer_send, name);
 		send(sock_cp, buffer_send, sizeof(buffer_send), 0);
-	} while (strlen(buffer_get) > 20);
+	} while (strlen(buffer_get) < 20);
+	printf("The connection has been cropped \n");
 }

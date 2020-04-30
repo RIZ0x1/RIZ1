@@ -13,8 +13,6 @@ int	main()
 	addr.sin_port		= htons(PORT);
 	addr.sin_addr.s_addr	= htonl(INADDR_LOOPBACK);
 
-	if (bind(sock, (struct sockaddr*)&addr, sizeof(addr)) < 0)
-		exit_failure("Binding error");
 	if (connect(sock, (struct sockaddr*)&addr, sizeof(addr)) < 0)
 		exit_failure("Connecting error");
 

@@ -2,7 +2,6 @@
 
 void	exit_failure(char *error)
 {
-	perror("ERROR: ");
-	perror(error);
+	printf("ERROR: %s \n", error);
 	exit(EXIT_FAILURE);
 }
