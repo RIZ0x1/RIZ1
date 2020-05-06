@@ -1,1 +1,2 @@
 https://habr.com/en/post/320036/ - Настройка ЭнжинИкс и phpFpm
+https://losst.ru/chto-znachit-502-bad-gateway-nginx - Бад гейтвей еррор 502
