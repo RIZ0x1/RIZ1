@@ -1,5 +1,5 @@
 <?php
-	{ // 3
+	{ // 1
 		$text	= "The numbers: ";
 		$num	= 0x1f;
 		$num2	= -32;
@@ -21,3 +21,29 @@
 		}
 	}
 	{ //4
+		$hit	= null;
+
+		if (empty($hit))
+		{
+?>
+			<div style="color:orange" align="center"> <?= "Shit is empty!" ?> </div>
+<?php
+		}
+	}
+	{ //5
+		$hit	= 3.14;
+		echo gettype($hit); //double (realy?)
+	}
+	{ //6
+		if (is_string($text))
+		{
+			echo "Yes, it is!";
+		}
+		if (is_double($num2))
+		{
+			echo "Yes, it is!";
+		}
+		//...
+	}
+	{ //7
+
