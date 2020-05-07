@@ -4,12 +4,12 @@
 		$num	= 0x1f;
 		$num2	= -32;
 		$num3	= -0x07;
-		echo "{$text}$num | $num2 | $num3";
+		echo "{$text}$num | $num2 | $num3 <br/>";
 	}
 	{ // 2
 		$str = <<< END
-		Здесь была твоя мамаша. Что она тут делала? Дрочус? Дракочус? Неее, она не такая
-		она больше любит анчоус!
+		- Wha... what are you doing?
+		- Evening the odds...
 		END;
 
 		echo "{$str}!!!";
@@ -33,6 +33,7 @@
 	{ //5
 		$hit	= 3.14;
 		echo gettype($hit); //double (realy?)
+		echo "<br/>";
 	}
 	{ //6
 		if (is_string($text))
@@ -44,6 +45,33 @@
 			echo "Yes, it is!";
 		}
 		//...
+		echo "<br/>";
 	}
 	{ //7
+		$str = "6.66";
+		$str = $str + 3.14;
+		echo $str;
+	}
+	{ // 8
+		$str	= 15.55;
+		$number	= (int)$str;
 
+	}
+	{ // 9
+		$number = 17;
+		$flag	= (float)($number / 2) - (int)($number / 2);
+
+		if ($flag)
+			echo "Число нечетное, блять!";
+		else
+			echo "Число четное, блять!";
+		echo "<br/>";
+	}
+	{ // 10
+		echo intval("43");
+		echo "<br/>";
+		echo floatval(43 + 0.3);
+		echo "<br/>";
+		echo intval(0xff, 16);
+		echo "<br/>";
+	}
