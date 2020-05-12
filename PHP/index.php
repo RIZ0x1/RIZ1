@@ -75,3 +75,26 @@
 		echo intval(0xff, 16);
 		echo "<br/>";
 	}
+	{ // 11
+		$str = "loopa";
+		$str = "za$str";
+		$$str = 666;
+
+		if (isset($zaloopa))
+		{
+			echo "Переменная залупа создана и равна - $zaloopa";
+			echo "</br>";
+		}
+	}
+	{ // 12
+		$number = 3.54321;
+		echo "Before rounding - $number </br>";
+		$number = round($number, 2, PHP_ROUND_HALF_UP);
+		echo "After rounding - $number </br>";
+	}
+	{ // 13
+		echo decbin(4252);
+		echo "</br>";
+		echo decbin(89080);
+		echo "</br>";
+	}
