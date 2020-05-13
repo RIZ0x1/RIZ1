@@ -66,17 +66,21 @@
 		echo "<br/>";
 	}
 	{ // 14
-		$var = new Point;
-		$var->x = 5;
-		$var->y = 19;
-		$var->z = 2;
+		$obj = new Point;
+		$obj->x = 5;
+		$obj->y = 19;
+		$obj->z = 2;
 
-		echo "X: $var->x <br/>";
-		echo "Y: $var->y <br/>";
-		echo "Z: $var->z <br/>";
-		unset($var);
+		$fig = Point::$figure;
+
+		echo "FIGURE: $fig <br/>";
+		echo "X: $obj->x <br/>";
+		echo "Y: $obj->y <br/>";
+		echo "Z: $obj->z <br/>";
+		unset($obj);
 		error_log("PROSTO ERROR BLYA!");
 	}
 	{ // 15
-
-	
+		$obj2 = new Point;	
+		echo "FIGURE2: $fig </br>";
+	}
