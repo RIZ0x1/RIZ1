@@ -1,15 +1,15 @@
-#include "heaader.h"
+#include "header.h"
 
 void	create_file(FILE *file, char *name, char *birth, char *phone)
 {
 	file = fopen("brutbase", "w");
 
-	errors_checking(file, name, birth, phone);
+	check_errors(file, name, birth, phone);
 
-
+	printf("name = %s \n birth = %s \n phone = %s \n", name, birth, phone);
 }
 
-void	errors_checking(FILE *file, char *name, char *birth, char *phone)
+void	check_errors(FILE *file, char *name, char *birth, char *phone)
 {
 	int	i;
 
@@ -18,15 +18,15 @@ void	errors_checking(FILE *file, char *name, char *birth, char *phone)
 		printf("ERROR: Can't open file \n");
 		exit(2);
 	}
-	
+
 	i = 0;
+	if (strlen(name) > 30)
+	{
+		printf("ERROR: Too large name \n");
+		exit(2);
+	}
 	while (name[i])
 	{
-		if (strlen(name) > 30)
-		{
-			printf("ERROR: Too large name \n");
-			exit(2);
-		}
 		if ((name[i] < 97 || name[i] > 122) && (name[i] != '-'))
 		{
 			printf("ERROR: The name has forbidden symbols \n");
@@ -34,6 +34,7 @@ void	errors_checking(FILE *file, char *name, char *birth, char *phone)
 		}
 		(i++);
 	}
+
 	i = 0;
 	if (strlen(birth) != 9 && birth[8] != '\0')
 	{
@@ -56,7 +57,21 @@ void	errors_checking(FILE *file, char *name, char *birth, char *phone)
 		}
 		(i++);
 	}
+
 	i = 0;
-	// PHONE
+	if (strlen(phone) != 12 && phone[11] != '\0')
+	{
+		printf("ERROR: Too large number \n");
+		exit(2);
+	}
+	while (phone[i])
+	{
+		if (phone[i] < 48 || phone[i] > 57)
+		{
+			printf("ERROR: Forbidden symbols in the phone number \n");
+			exit(2);
+		}
+		(i++);
+	}
 }
 
