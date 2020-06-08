@@ -2,17 +2,15 @@
 
 void	create_file(FILE *file, char *name, char *birth, char *phone)
 {
-	file = fopen("brutbase", "w");
-
 	check_errors(file, name, birth, phone);
-
-	printf("name = %s \n birth = %s \n phone = %s \n", name, birth, phone);
+	
 }
 
 void	check_errors(FILE *file, char *name, char *birth, char *phone)
 {
 	int	i;
 
+	file = fopen("brutbase", "w");
 	if (file == NULL)
 	{
 		printf("ERROR: Can't open file \n");
@@ -36,7 +34,7 @@ void	check_errors(FILE *file, char *name, char *birth, char *phone)
 	}
 
 	i = 0;
-	if (strlen(birth) != 9 && birth[8] != '\0')
+	if (strlen(birth) != 11 && birth[10] != '\0')
 	{
 		printf("ERROR: Wrong date format \n");
 		exit(2);

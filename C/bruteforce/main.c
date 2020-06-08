@@ -3,7 +3,7 @@
 int	main()
 {
 	char name[30];
-	char birth[9];
+	char birth[11];
 	char phone[12];
 //	char additinal[300];
 	FILE *file;
